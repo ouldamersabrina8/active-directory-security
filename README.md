@@ -76,7 +76,59 @@ Les scénarios de validation portent sur l'application des GPO, les restrictions
 
 ## Documentation du projet
 
-Des captures issues du laboratoire seront ajoutées pour illustrer l'architecture Active Directory, les configurations de sécurité et les résultats des tests.
+
+## Documentation et preuves techniques
+
+Les captures suivantes sont issues du laboratoire Active Directory réalisé sous Windows Server. Elles illustrent les configurations mises en place et les tests effectués.
+
+### 1. Architecture Active Directory multidomaine
+
+![Architecture Active Directory](screenshots/01-architecture-domaines.png)
+
+Présentation de l'infrastructure Active Directory, comprenant un domaine racine et deux domaines enfants. Cette architecture permet une administration centralisée des identités, des ressources et des politiques de sécurité.
+
+### 2. Sécurisation des comptes — FGPP
+
+![Politique FGPP](screenshots/02-politique-fgpp.png)
+
+Configuration d'une politique de mots de passe granulaires (Fine-Grained Password Policy) destinée à renforcer la sécurité des comptes d'un groupe d'utilisateurs.
+
+### 3. Redirection des dossiers utilisateurs
+
+![GPO de redirection](screenshots/03-gpo-redirection-dossiers.png)
+
+Configuration d'une stratégie de groupe permettant la redirection des dossiers utilisateurs vers un emplacement centralisé.
+
+### 4. Contrôle des applications avec AppLocker
+
+![Test AppLocker](screenshots/04-test-applocker.png)
+
+Test d'une règle AppLocker visant à empêcher l'exécution d'une application non autorisée sur un poste client.
+
+### 5. Vérification des relations d'approbation
+
+![Relations d'approbation](screenshots/05-verification-relations-approbation.png)
+
+Utilisation des outils de diagnostic Active Directory pour examiner les relations d'approbation entre les domaines de l'infrastructure.
+
+### 6. Configuration du Loopback Processing
+
+![GPO Loopback Replace](screenshots/06-gpo-loopback-replace.png)
+
+Configuration du traitement en boucle des stratégies de groupe en mode Replace, dans le cadre d'un scénario de postes de travail partagés (Hot Desk).
+
+### 7. Validation des restrictions du poste client
+
+![Restriction du Panneau de configuration](screenshots/07-test-restriction-panneau-configuration.png)
+
+Test de l'application d'une stratégie de groupe restreignant l'accès au Panneau de configuration sur un poste client.
+
+---
+
+**Contexte :** Projet académique réalisé au Collège LaSalle, Montréal.
+
+**Technologies :** Windows Server, AD DS, GPMC, FGPP, AppLocker, PowerShell et stratégies de groupe.
+
 
 ---
 
